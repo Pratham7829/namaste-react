@@ -59,3 +59,45 @@
 .res-logo {
   width: 100%;
 }
+
+.shimmer-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.shimmer-card {
+  margin: 20px;
+  height: 190px;
+  width: 190px;
+  background-color: #1d1919a1;
+}
+
+.login {
+  cursor: pointer;
+  padding: 0 20px;
+  margin-right: 10px;
+  border: 1px solid #f0f0f0;
+}
+
+.filter {
+  display: flex;
+}
+
+.search {
+  margin: 5px;
+}
+
+.search-box {
+  outline: none;
+  border: 1px solid #f0f0f0;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.search > button {
+  outline: none;
+  border: 1px solid #f0f0f0;
+  border-radius: 5px;
+  padding: 5px;
+  cursor: pointer;
+}
