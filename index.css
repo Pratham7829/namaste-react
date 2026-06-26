@@ -48,8 +48,12 @@
   border: 1px solid #fff;
 }
 
-.search {
-  padding: 10px;
+.filter-btn {
+  padding: 5px;
+  border: 1px solid #f0f0f0;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 3px;
 }
 
 .res-logo {
