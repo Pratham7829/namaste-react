@@ -26,7 +26,13 @@ class UserClass extends React.Component {
     // console.log(json);
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.count !== prevState.count) {
+      //
+    }
+    if (this.state.count2 !== prevState.count2) {
+      // code
+    }
     console.log("Child Component did update");
   }
 

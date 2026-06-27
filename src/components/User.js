@@ -6,7 +6,13 @@ const User = (props) => {
   const [count, setCount] = useState(0);
   const [count2, setCount2] = useState(1);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    console.log("use effect");
+  }, [count]);
+
+  useEffec(() => {
+    console.log("use effect 2");
+  }, [count2]);
 
   return (
     <div className="user-card">
