@@ -1,6 +1,8 @@
 import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
+import mockRestaurants from "../utils/mockRestaurants";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
@@ -13,21 +15,21 @@ const Body = () => {
   }, []);
 
   const fetchData = async () => {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.67568619999999&lng=77.2596337&page_type=DESKTOP_WEB_LISTING",
-    );
+    // const data = await fetch(
+    //   "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.67568619999999&lng=77.2596337&page_type=DESKTOP_WEB_LISTING",
+    // );
 
-    const json = await data.json();
-    const restaurantCard = json.data.cards.find(
-      (card) => card?.card?.card?.gridElements?.infoWithStyle?.restaurants,
-    );
+    // const json = await data.json();
+    // const restaurantCard = json.data.cards.find(
+    //   (card) => card?.card?.card?.gridElements?.infoWithStyle?.restaurants,
+    // );
 
-    const restaurants =
-      restaurantCard?.card?.card?.gridElements?.infoWithStyle?.restaurants ||
-      [];
+    // const restaurants =
+    //   restaurantCard?.card?.card?.gridElements?.infoWithStyle?.restaurants ||
+    //   [];
 
-    setListOfRestaurants(restaurants);
-    setFilteredRestaurants(restaurants);
+    setListOfRestaurants(mockRestaurants);
+    setFilteredRestaurants(mockRestaurants);
   };
 
   return listOfRestaurants.length === 0 ? (
@@ -73,7 +75,12 @@ const Body = () => {
       </div>
       <div className="res-container">
         {filteredRestaurants.map((restaurant) => (
-          <RestaurantCard key={restaurant.info.id} resData={restaurant} />
+          <Link
+            key={restaurant.info.id}
+            to={"/restaurants/" + restaurant.info.id}
+          >
+            <RestaurantCard resData={restaurant} />
+          </Link>
         ))}
       </div>
     </div>
