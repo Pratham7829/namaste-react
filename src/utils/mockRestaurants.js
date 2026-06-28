@@ -45,7 +45,8 @@ const mockRestaurants = [
     info: {
       id: "4",
       name: "Domino's Pizza",
-      image: "https://images.unsplash.com/photo-1548365328-9f547fb0953b?w=800",
+      image:
+        "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800",
       cuisines: ["Pizza", "Italian"],
       avgRating: 4.5,
       costForTwo: "₹600 for two",
@@ -85,7 +86,7 @@ const mockRestaurants = [
       id: "7",
       name: "Biryani Blues",
       image:
-        "https://images.unsplash.com/photo-1563379091339-03246963d29a?w=800",
+        "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800",
       cuisines: ["Biryani", "North Indian"],
       avgRating: 4.6,
       costForTwo: "₹700 for two",

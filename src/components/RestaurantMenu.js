@@ -1,25 +1,12 @@
-import { useState, useEffect } from "react";
-import mockMenu from "../utils/mockMenu";
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
+import useRestaurantMenu from "../utils/useRestaurantMenu";
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
-  const [resInfo, setResInfo] = useState(null);
 
-  useEffect(() => {
-    fetchMenu();
-  }, []);
+  const resInfo = useRestaurantMenu(resId);
 
-  const fetchMenu = async () => {
-    const restaurantInfo = mockMenu[resId];
-    if (!restaurantInfo) {
-      setResInfo(undefined);
-      return;
-    }
-
-    setResInfo(mockMenu[resId]);
-  };
   if (resInfo === null) return <Shimmer />;
 
   if (resInfo === undefined) {
